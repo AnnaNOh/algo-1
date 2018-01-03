@@ -12,7 +12,6 @@ describe RingBuffer do
   it "pushes/pops items" do
     arr = RingBuffer.new
     5.times { |i| arr.push(i) }
-
     expect(arr.length).to eq(5)
     5.times { |i| expect(arr[i]) == i }
 
@@ -43,6 +42,7 @@ describe RingBuffer do
       arr.unshift(i)
     end
 
+
     4.times do |i|
       expect(arr[i]).to eq(3-i)
       expect(arr[i+4]).to eq(i)
@@ -52,6 +52,7 @@ describe RingBuffer do
       expect(arr.shift).to eq(i)
       expect(arr.pop).to eq(i)
     end
+
   end
 
   it "can store more than 8 items" do
@@ -70,6 +71,7 @@ describe RingBuffer do
       arr.push(i)
       arr.unshift(i)
     end
+
 
     5.times do |i|
       expect(arr[i]).to eq(4-i)

@@ -14,8 +14,10 @@ describe QueueWithMax do
     5.times do |i|
       q.enqueue(i)
     end
+    p q
     5.times do
       q.dequeue
+      p q
     end
     expect(q.length).to eq(0)
   end
